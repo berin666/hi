@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">PDFDomain</string>
+    <string name="tab_title_favorites">Home</string>
+    <string name="tab_title_home">Favorites</string>
+
+    <string name="label_author">Author(s):</string>
+    <string name="label_year">Year:</string>
+    <string name="label_publisher">Publisher:</string>
+    <string name="label_filesize">File size:</string>
+    <string name="label_length">Length:</string>
+    <string name="pages_count">%s pages</string>
+    <string name="label_extension">Format:</string>
+    <string name="label_edition">Edition:</string>
+    <string name="label_language">Language:</string>
+    <string name="label_scanned">Scanned:</string>
+
+    <string name="activity_title_settings">Settings</string>
+    <string name="activity_title_details">Details</string>
+    <string name="activity_title_searchres">Search results</string>
+    <string name="activity_title_scan">Scan barcodes</string>
+
+    <string name="btn_text_download">Download</string>
+    <string name="btn_text_add_favorite">Add to favorites</string>
+    <string name="btn_text_remove_favorite">Remove from favorites</string>
+
+    <string name="state_label_pdfdomain">PDFDomain:</string>
+    <string name="state_label_server">Server:</string>
+    <string name="state_label_db">DB version:</string>
+    <string name="state_label_dbcnt">DB entries:</string>
+    <string name="tab_favorites_text">You have %d saved books</string>
+
+    <string name="not_applicable">n/a</string>
+
+    <string name="menu_share">Share</string>
+    <string name="menu_search">Search</string>
+    <string name="menu_settings">Settings</string>
+    <string name="menu_scan">Scan barcode</string>
+    <string name="up">UP</string>
+    <string name="down">DOWN</string>
+    <string name="menu_sort">Sort</string>
+    <string name="menu_addfavorite">Add favorite</string>
+    <string name="menu_removefavorite">Remove favorite</string>
+    <string name="btn_text_urlopen">Open link</string>
+
+</resources>

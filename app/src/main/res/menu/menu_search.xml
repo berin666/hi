@@ -1,0 +1,15 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.pdfdomain.MainActivity">
+
+    <item
+        android:id="@+id/action_sort"
+        android:icon="@drawable/outline_sort_white_24"
+        android:title="@string/menu_sort"
+        app:showAsAction="always"
+        />
+
+
+
+</menu>
