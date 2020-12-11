@@ -17,7 +17,16 @@ public interface ApiInterface {
 
     @GET("/api/")
     Call<String> getRandomBooks(@Query("page") String pageCount);
-
+    //http://pdfdomain.com/api/?page=2
+    /*
+    http://berin.com/berinapp/first?a=time
+    http = protocol - https
+    berin.com = domain name
+    /berinapp/ = path
+    first = path
+    a = query param
+    time = query value
+     */
     @GET("/api/")
     Call<List<Book>> getBooksJSON(@QueryMap Map<String, Object> map);
 
