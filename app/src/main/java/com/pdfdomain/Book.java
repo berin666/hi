@@ -6,66 +6,65 @@ import java.io.Serializable;
 
 public class Book extends SugarRecord implements Serializable{
 
-    private String Title;
-    private String Author;
-    private String Year;
-    private String Publisher;
-    private long Filesize;
-    private String Extension;
-    private String Pages;
-    private String Coverurl;
+    private String titel;
+    private String type;
+    private String score;
+    private String source;
+    private long category;
+    private String desc;
+    private String pgCnt;
+    private String flNm;
     private String MD5;
-    private String Edition;
-    private String Language;
-    private String Scanned;
-    private String fileName;
-
-
+    private String foundUrl;
+    private String language;
+    private String imFlPth;
+    private String ixDate;
+    private String id;
 
     public boolean isFavorite(){
         return !Book.find(Book.class, "MD5 = ?", getMD5()).isEmpty();
     }
 
-    public String getTitle() {
-        return Title;
+    public String getTitel() {
+        return titel;
     }
 
-    public String getAuthor() {
-        return Author;
+    public String getType() {
+        return type;
     }
 
-    public String getYear() {
-        return Year;
+    public String getScore() {
+        return score;
     }
 
-    public String getPublisher() {
-        return Publisher;
+    public String getSource() {
+        return source;
     }
 
-    public long getFilesize() {
-        return Filesize;
+    public long getCategory() {
+        return category;
     }
 
-    public String getExtension() {
-        return Extension;
+    public String getDesc() {
+        return desc;
     }
 
-    public String getPages() {
-        return Pages;
+    public String getPgCnt(){ return pgCnt;
     }
 
-    public String getCoverurl() { return Coverurl; }
+    public String getFlNm() { return flNm; }
 
     public String getMD5() { return MD5; }
 
-    public String getEdition() {
-        return Edition;
+    public String getFoundUrl() {
+        return foundUrl;
     }
 
-    public String getLanguage() { return Language; }
+    public String getLanguage() { return language; }
 
-    public String getScanned() { return Scanned; }
+    public String getImFlPth() { return imFlPth; }
 
-
+    public String getID(){return id; }
+    public String getIxDate(){return ixDate; }
 
 }

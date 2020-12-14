@@ -70,16 +70,16 @@ public class DetailsActivity extends AppCompatActivity implements SwipeRefreshLa
         if(getIntent().getSerializableExtra("book") != null){
             b = (Book)getIntent().getSerializableExtra("book");
 
-            tvAuthor.setText(b.getAuthor());
-            tvTitle.setText(b.getTitle());
-            tvYear.setText(b.getYear());
-            tvExtension.setText(b.getExtension());
-            tvFileSize.setText(Formatter.formatFileSize(getApplicationContext(), b.getFilesize()));
-            tvPublisher.setText(b.getPublisher());
-            tvPages.setText(getString(R.string.pages_count,b.getPages()));
-            tvEdition.setText(b.getEdition().equals("") ? "-" : b.getEdition());
+            tvAuthor.setText(b.getType());
+            tvTitle.setText(b.getTitel());
+            tvYear.setText(b.getScore());
+            tvExtension.setText(b.getDesc());
+            tvFileSize.setText(Formatter.formatFileSize(getApplicationContext(), b.getCategory()));
+            tvPublisher.setText(b.getSource());
+            tvPages.setText(R.string.pages count 2,b.getPgCnt()));
+            tvEdition.setText(b.getFoundUrl().equals("") ? "-" : b.getFoundUrl());
             tvLanguage.setText(b.getLanguage());
-            tvScanned.setText(b.getScanned().equals("1") ? "Yes" : (b.getScanned().equals("0") ? "No" : "-"));
+            tvScanned.setText(b.getImFlPth().equals("1") ? "Yes" : (b.getImFlPth().equals("0") ? "No" : "-"));
         }
 
         btnDownload = findViewById(R.id.btnDownload);
@@ -107,7 +107,7 @@ public class DetailsActivity extends AppCompatActivity implements SwipeRefreshLa
         // getting cover image
         final ImageView cover = findViewById(R.id.cover);
         Picasso.with(this)
-                .load("https://pdfdomain.com/" + b.getCoverurl())
+                .load("https://pdfdomain.com/" + b.getFlNm())
                 .into(cover, new com.squareup.picasso.Callback() {
                     @Override
                     public void onSuccess() {
@@ -152,7 +152,7 @@ public class DetailsActivity extends AppCompatActivity implements SwipeRefreshLa
 
     // gets the download url and original filename from the server based on the book's MD5
     private void getDownloadUrl(){
-        ApiClient.getInstance().getDownloadUrlJSON(b.getMD5()).enqueue(new Callback<ParseData>() {
+        ApiClient.getInstance().getDownloadUrlJSON(b.getTitel()b.getID()).enqueue(new Callback<ParseData>() {
             @Override
             public void onResponse(Call<ParseData> call, Response<ParseData> response) {
                 Log.d(TAG, "onResponse: " + response.code());
@@ -177,7 +177,7 @@ public class DetailsActivity extends AppCompatActivity implements SwipeRefreshLa
         DownloadManager.Request request = new DownloadManager.Request(Uri.parse(parseData.getUrl()));
         request.allowScanningByMediaScanner();
         request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-        request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, b.getTitle()+" by "+b.getAuthor()+'.'+b.getExtension());
+        request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, b.getTitel()+" by "+b.getType()+'.'+b.getDesc());
 
         DownloadManager manager = (DownloadManager)this.getSystemService(Context.DOWNLOAD_SERVICE);
         if (manager != null) {
@@ -212,7 +212,7 @@ public class DetailsActivity extends AppCompatActivity implements SwipeRefreshLa
             case R.id.action_share:
                 Intent shareIntent = new Intent(Intent.ACTION_SEND);
                 shareIntent.setType("text/plain");
-                shareIntent.putExtra(Intent.EXTRA_TEXT, "https://pdfdomain.com/api/single/"+b.getMD5()+"/test");
+                shareIntent.putExtra(Intent.EXTRA_TEXT, "https://pdfdomain.com/sedziezjkzd/single/"+b.getMD5()+"/test");
                 startActivity(Intent.createChooser(shareIntent, "Share link to PdfDomain page"));
                 break;
             case R.id.add_favorite:

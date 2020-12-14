@@ -12,11 +12,12 @@ import retrofit2.http.Query;
 import retrofit2.http.QueryMap;
 import com.pdfdomain.Book;
 import com.pdfdomain.DetailsActivity;
+import com.pdfdomain.DetailsActivity.ParseData;
 
 public interface ApiInterface {
 
-    @GET("/api/")
-    Call<String> getRandomBooks(@Query("page") String pageCount);
+    @GET("/sedziezjkzd/")
+    Call<String> getRandomBooks(@Query("page") String page2);
     //http://pdfdomain.com/api/?page=2
     /*
     http://berin.com/berinapp/first?a=time
@@ -27,12 +28,12 @@ public interface ApiInterface {
     a = query param
     time = query value
      */
-    @GET("/api/")
+    @GET("/sedziezjkzd/")
     Call<List<Book>> getBooksJSON(@QueryMap Map<String, Object> map);
 
-    @GET("/api/single/")
-    Call<DetailsActivity.ParseData> getDownloadUrlJSON(@Path("md5") String md5);
+    @GET("/sedziezjkzd/single/{id}/{titel}")
+    Call<DetailsActivity.ParseData> getDownloadUrlJSON(@Path("id")String id, @Path("titel") String titel);
 
-    @GET("/api/update.jsp")
+    @GET("/sedziezjkzd/update.jsp")
     Call<JsonObject> getUpdateJSON();
 }

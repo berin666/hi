@@ -42,14 +42,15 @@ public class ApiClient {
         return apiInterface.getBooksJSON(map);
     }
 
-    public Call<String> getRandomBooks(String pageCount) {
-        return apiInterface.getRandomBooks(pageCount);
+    public Call<String> getRandomBooks(String page2) {
+        return apiInterface.getRandomBooks(page2);
+
     }
 
 
 
-    public Call<DetailsActivity.ParseData> getDownloadUrlJSON(String md5) {
-        return apiInterface.getDownloadUrlJSON(md5);
+    public Call<DetailsActivity.ParseData> getDownloadUrlJSON(String titel,String id) {
+        return apiInterface.getDownloadUrlJSON(titel,id);
     }
 
     public Call<JsonObject> getUpdateJSON(){

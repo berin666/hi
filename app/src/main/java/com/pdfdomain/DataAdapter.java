@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 public class DataAdapter extends RecyclerView.Adapter<DataAdapter.MyViewHolder> {
 
-    private ArrayList<Book> books;
+    private Ar0rayList<Book> books;
     private Context context;
 
     public DataAdapter(ArrayList<Book> books, Context context) {
@@ -32,9 +32,9 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.MyViewHolder> 
         final Book book = books.get(i);
 
         myViewHolder.tv_author.setText(book.getAuthor());
-        myViewHolder.tv_title.setText(book.getTitle());
-        myViewHolder.tv_year.setText(book.getYear());
-        myViewHolder.tv_extension.setText(book.getExtension());
+        myViewHolder.tv_title.setText(book.getTitel());
+        myViewHolder.tv_year.setText(book.getScore());
+        myViewHolder.tv_extension.setText(book.getDesc());
         
         myViewHolder.relativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
